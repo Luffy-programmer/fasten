@@ -166,7 +166,7 @@ public class GraphMavenResolver implements Runnable {
             buildDependencyGraph(dbContext);
         }
 		// Constant memory footprint
-		//var reverseGraph = new EdgeReversedGraph(dependencyGraph);
+		// var reverseGraph = new EdgeReversedGraph(dependencyGraph);
         var reverseGraph = DependencyGraphUtilities.invertDependencyGraph(dependencyGraph);
         return this.resolveDependencySetUsingGraph(groupId, artifactId, version, timestamp,
                 scopes, dbContext, reverseGraph, filterOptional, filterScopes, filterExclusions);
